@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pinhal Cabin — Um voo pela cabana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=30">
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-inner">
+    <svg width="34" height="34" viewBox="0 0 30 30" fill="none"><path d="M15 3 L27 24 H3 Z" stroke="#e3b04b" stroke-width="1.4"/></svg>
+    <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
+    <span id="loaderPct">A carregar a cabana… 0%</span>
+  </div>
+</div>
+
+<!-- FLOATING OPTIONS BAR -->
+<header class="site-bar">
+  <div class="brand">
+    <svg width="28" height="28" viewBox="0 0 30 30" fill="none"><path d="M15 3 L27 24 H3 Z" stroke="#e3b04b" stroke-width="1.4"/></svg>
+    <span>PINHAL<br><small>Cabin</small></span>
+  </div>
+  <nav>
+    <a href="reservar.html">Reservar</a>
+    <a href="#comodos">Cômodos</a>
+    <a href="#localizacao">Localização</a>
+  </nav>
+</header>
+
+<!-- SCROLL-SCRUBBED VIDEO EXPERIENCE -->
+<section id="scrollVideo">
+  <div class="scrub-sticky">
+    <img id="heroStill" src="images/hero-open.jpg" alt="Cabana A-Frame na floresta" fetchpriority="high" decoding="async">
+    <video id="scrubVideo" muted playsinline preload="auto" disablepictureinpicture></video>
+    <div class="scrub-vignette"></div>
+
+    <!-- scroll hint -->
+    <div class="scroll-hint" id="scrollHint">
+      <span>role para explorar</span>
+      <div class="hint-line"><i></i></div>
+    </div>
+
+    <!-- synced content panels -->
+    <div class="panel panel-left is-on" data-start="0.00" data-end="0.16">
+      <div class="eyebrow">Floresta, refúgio privado</div>
+      <h1>Cabana A-Frame<br>na Floresta</h1>
+      <p>Um recanto de madeira e vidro entre as árvores. Role a página para voar por dentro dela.</p>
+    </div>
+
+    <div class="panel panel-right" data-start="0.20" data-end="0.50">
+      <div class="eyebrow">Por dentro</div>
+      <h2>Sala, cozinha e<br>jantar integrados</h2>
+      <p>Um único espaço aberto sob vigas de madeira à vista, com janelas do chão ao teto emoldurando a floresta em todas as direções.</p>
+    </div>
+
+    <div class="panel panel-left" data-start="0.54" data-end="0.66">
+      <div class="eyebrow">Detalhes</div>
+      <h2>Casa de banho em<br>pedra e madeira</h2>
+      <p>Acabamentos naturais, box em vidro e bancada em madeira maciça.</p>
+    </div>
+
+    <div class="panel panel-center" data-start="0.80" data-end="1.00">
+      <div class="eyebrow">Pronto para reservar?</div>
+      <h2>A sua estadia<br>começa aqui</h2>
+      <div class="price-tag">a partir de <b>€165</b> / noite</div>
+      <a href="reservar.html" class="btn">Ver disponibilidade →</a>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="section-forest" id="reservar">
+  <div class="stay">
+    <img class="stay-bg" src="images/living_wide_hd.jpg" alt="Sala de estar da cabana" loading="lazy">
+    <div class="stay-text">
+      <div class="eyebrow">O seu fim de semana no bosque</div>
+      <h2>Uma pausa entre pinheiros</h2>
+    </div>
+    <div class="stay-panel">
+      <div>
+        <div class="stay-price">€165 <span>/ noite</span></div>
+        <ul class="stay-list">
+          <li><span class="li-ico">👥</span> 2–6 hóspedes</li>
+          <li><span class="li-ico">🛏️</span> 2 quartos · 1 loft</li>
+          <li><span class="li-ico">🕒</span> Check-in a partir das 15:00 · Check-out até às 11:00</li>
+          <li><span class="li-ico">✨</span> Ideal para desconexão digital e fins de semana a dois</li>
+        </ul>
+      </div>
+      <a href="reservar.html" class="btn">Escolher datas →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ROOMS -->
+<section class="section-light" id="comodos">
+  <div class="rooms-head">
+    <div>
+      <div class="eyebrow">Por dentro</div>
+      <h2>Cada cômodo, pensado<br>para o descanso</h2>
+    </div>
+    <p>Madeira à vista, tectos em duas águas e janelas do chão ao teto — a floresta entra em cada divisão da cabana.</p>
+  </div>
+  <div class="rooms-grid">
+    <div class="room-card room-tall"><img src="images/exterior_dusk.jpg" alt="Exterior ao entardecer" loading="lazy"><span class="room-label">🏡 Exterior</span></div>
+    <div class="room-card room-wide"><img src="images/kitchen_living_1.jpg" alt="Cozinha aberta" loading="lazy"><span class="room-label">🍳 Cozinha</span></div>
+    <div class="room-card"><img src="images/living_tv.jpg" alt="Sala de estar" loading="lazy"><span class="room-label">🛋️ Sala</span></div>
+    <div class="room-card"><img src="images/dining.jpg" alt="Sala de jantar" loading="lazy"><span class="room-label">🍽️ Jantar</span></div>
+    <div class="room-card"><img src="images/bedroom.jpg" alt="Quarto principal" loading="lazy"><span class="room-label">🛏️ Quarto</span></div>
+    <div class="room-card"><img src="images/bathroom.jpg" alt="Casa de banho" loading="lazy"><span class="room-label">🚿 Casa de banho</span></div>
+    <div class="room-card"><img src="images/deck_lounge.jpg" alt="Deck com estar exterior" loading="lazy"><span class="room-label">🌲 Deck</span></div>
+    <div class="room-card"><img src="images/loft_view.jpg" alt="Loft" loading="lazy"><span class="room-label">🪜 Loft</span></div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="section-light" id="localizacao">
+  <div class="loc-grid">
+    <div class="loc-copy">
+      <div class="eyebrow">Como chegar</div>
+      <h2>Localização e arredores</h2>
+      <p class="desc">Escondida entre os pinheiros, a poucos minutos da estrada principal — perto o suficiente para chegar sem esforço, longe o suficiente para desligar de tudo.</p>
+    </div>
+    <figure class="loc-map" tabindex="0" aria-label="Passe o rato para ver a rota até à cabana">
+      <img src="images/map-route.jpg?v=2" alt="Vista aérea da cabana na floresta" loading="lazy">
+      <svg class="loc-route" viewBox="0 0 1536 1024" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <filter id="routeGlow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="5" result="blur"/>
+            <feMerge>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        <path class="route-line" pathLength="1" fill="none" d="M1329 1008 C1312 987 1294 960 1279 944 C1264 928 1259 921 1238 912 C1217 903 1197 893 1154 888 C1111 883 1029 885 980 884 C931 883 887 886 858 880 C829 874 824 861 806 848 C788 835 765 815 751 800 C737 785 728 771 721 760 C714 749 735 745 706 736 C677 727 590 716 548 704 C506 692 487 677 456 664"/>
+        <circle class="route-tracer" r="7" fill="#e3b04b"/>
+        <g class="route-start">
+          <circle cx="1329" cy="1008" r="8" fill="#e3b04b"/>
+        </g>
+        <g class="route-pin">
+          <circle cx="456" cy="664" r="22" fill="none" stroke="#e3b04b" stroke-width="2"/>
+          <circle cx="456" cy="664" r="6" fill="#e3b04b"/>
+        </g>
+      </svg>
+    </figure>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">
+    <svg width="24" height="24" viewBox="0 0 30 30" fill="none"><path d="M15 3 L27 24 H3 Z" stroke="#e3b04b" stroke-width="1.4"/></svg>
+    <span>PINHAL<br><small>Cabin</small></span>
+  </div>
+  <span class="copy">© 2026 Pinhal Cabin. Todos os direitos reservados.</span>
+</footer>
+
+<script src="script.js?v=30"></script>
+</body>
+</html>

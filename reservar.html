@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reservar — Pinhal Cabin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=30">
+</head>
+<body class="book-body">
+
+<header class="site-bar">
+  <a class="brand" href="index.html">
+    <svg width="28" height="28" viewBox="0 0 30 30" fill="none"><path d="M15 3 L27 24 H3 Z" stroke="#e3b04b" stroke-width="1.4"/></svg>
+    <span>PINHAL<br><small>Cabin</small></span>
+  </a>
+  <nav>
+    <a href="reservar.html" aria-current="page">Reservar</a>
+    <a href="index.html#comodos">Cômodos</a>
+    <a href="index.html#localizacao">Localização</a>
+  </nav>
+</header>
+
+<main class="book-page">
+  <section class="book-hero">
+    <div class="book-photo">
+      <img src="images/living_wide_hd.jpg" alt="Sala de estar da cabana">
+    </div>
+    <div class="book-intro">
+      <div class="eyebrow">Reservar estadia</div>
+      <h1>Escolha as datas da sua pausa entre pinheiros</h1>
+      <p class="desc">Cabana A-Frame privada. Check-in a partir das 15:00 · Check-out até às 11:00.</p>
+      <ul class="book-facts">
+        <li><span>€165</span> / noite</li>
+        <li>2–6 hóspedes</li>
+        <li>2 quartos · 1 loft</li>
+      </ul>
+    </div>
+  </section>
+
+  <aside class="book-card" id="bookCard">
+    <div id="bookFlow">
+      <div class="book-dates-row">
+        <button type="button" class="book-date-field is-active" data-field="in">
+          <span>Check-in</span>
+          <strong id="labelIn">Adicionar data</strong>
+        </button>
+        <button type="button" class="book-date-field" data-field="out">
+          <span>Check-out</span>
+          <strong id="labelOut">Adicionar data</strong>
+        </button>
+      </div>
+
+      <div class="cal-nav">
+        <button type="button" class="cal-arrow" id="calPrev" aria-label="Mês anterior">‹</button>
+        <button type="button" class="cal-arrow" id="calNext" aria-label="Mês seguinte">›</button>
+      </div>
+      <div class="cal-months" id="calMonths"></div>
+      <p class="cal-hint" id="calHint">Selecione o check-in e depois o check-out. Mínimo 1 noite.</p>
+
+      <div class="guest-row">
+        <div>
+          <div class="guest-label">Hóspedes</div>
+          <div class="guest-sub">2 a 6 pessoas</div>
+        </div>
+        <div class="guest-step">
+          <button type="button" id="guestMinus" aria-label="Menos hóspedes">−</button>
+          <span id="guestCount">2</span>
+          <button type="button" id="guestPlus" aria-label="Mais hóspedes">+</button>
+        </div>
+      </div>
+
+      <div class="book-summary" id="bookSummary" hidden>
+        <div><span id="sumNights">0 noites</span> × €165</div>
+        <strong id="sumTotal">€0</strong>
+      </div>
+
+      <button type="button" class="btn book-submit" id="bookSubmit" disabled>Confirmar pedido</button>
+      <button type="button" class="book-clear" id="bookClear">Limpar datas</button>
+    </div>
+
+    <div class="book-success" id="bookSuccess" hidden>
+      <div class="eyebrow">Pedido enviado</div>
+      <h2>A sua estadia está pedida</h2>
+      <p class="desc" id="successCopy"></p>
+      <a href="index.html" class="btn">Voltar à cabana →</a>
+      <button type="button" class="book-clear" id="bookAgain">Fazer outro pedido</button>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <a class="brand" href="index.html">
+    <svg width="24" height="24" viewBox="0 0 30 30" fill="none"><path d="M15 3 L27 24 H3 Z" stroke="#e3b04b" stroke-width="1.4"/></svg>
+    <span>PINHAL<br><small>Cabin</small></span>
+  </a>
+  <span class="copy">© 2026 Pinhal Cabin. Todos os direitos reservados.</span>
+</footer>
+
+<script src="booking.js"></script>
+</body>
+</html>

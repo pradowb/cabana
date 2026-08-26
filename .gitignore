@@ -1,0 +1,16 @@
+.DS_Store
+
+# Source / unused flythrough leftovers (site uses images/scrub.mp4)
+frames/
+images/atlas/
+images/hd/
+
+# Unused image leftovers
+images/hero.jpg
+images/hero-cabin.jpg
+images/living_wide.jpg
+images/map.jpg
+images/map-realistic.jpg
+images/exterior_side.jpg
+images/hallway.jpg
+images/kitchen_island.jpg
