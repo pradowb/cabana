@@ -353,3 +353,35 @@ footer{
   .book-photo,.book-photo img{min-height:240px;}
 }
 
+/* Campos de contacto da reserva (INC0001042) */
+.book-contact {
+  display: grid;
+  gap: 6px;
+  margin: 16px 0;
+  width: 100%;
+}
+.book-contact label {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-top: 8px;
+}
+.book-contact input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  font: inherit;
+  box-sizing: border-box;
+}
+.book-contact input:focus {
+  outline: none;
+  border-color: #c9a45c;
+}
+#bookError {
+  color: #b3261e;
+  font-size: 14px;
+  margin: 4px 0 0;
+}

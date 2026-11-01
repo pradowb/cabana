@@ -1,5 +1,6 @@
 (function(){
   const PRICE = 165;
+  const OWNER_WHATSAPP = '351XXXXXXXXX'; // troque pelo seu número para testar
   const MIN_G = 2;
   const MAX_G = 6;
   const WEEK = ['Seg','Ter','Qua','Qui','Sex','Sáb','Dom'];
@@ -209,22 +210,54 @@
   });
 
   elSubmit.addEventListener('click', () => {
-    const n = nightsCount();
-    if(n < 1) return;
-    const payload = {
-      checkIn: iso(checkIn),
-      checkOut: iso(checkOut),
-      nights: n,
-      guests,
-      total: n * PRICE,
-      at: new Date().toISOString()
-    };
-    try { localStorage.setItem('pinhal-booking', JSON.stringify(payload)); } catch(e){}
-    document.getElementById('bookFlow').hidden = true;
-    document.getElementById('bookSuccess').hidden = false;
-    document.getElementById('successCopy').textContent =
-      `Check-in ${fmt(checkIn)} · Check-out ${fmt(checkOut)} · ${n} ${n===1?'noite':'noites'} · ${guests} hóspedes · total €${n*PRICE}. Entraremos em contacto para confirmar a estadia.`;
-  });
+  const elError = document.getElementById('bookError');
+  const nome = document.getElementById('bookName').value.trim();
+  const email = document.getElementById('bookEmail').value.trim();
+  const telefone = document.getElementById('bookPhone').value.trim();
+  const n = nightsCount();
+
+  // 1. Validação: diz o que falta em vez de não fazer nada
+  let erro = '';
+  if (n < 1) erro = 'Escolha as datas de check-in e check-out.';
+  else if (!nome) erro = 'Indique o seu nome.';
+  else if (!/^\S+@\S+\.\S+$/.test(email)) erro = 'Indique um e-mail válido.';
+  else if (telefone.replace(/\D/g, '').length < 9) erro = 'Indique um telemóvel válido.';
+
+  if (erro) {
+    elError.textContent = erro;
+    elError.hidden = false;
+    return;
+  }
+  elError.hidden = true;
+
+  // 2. Dados da reserva, agora com os contactos
+  const payload = {
+    nome, email, telefone,
+    checkIn: iso(checkIn),
+    checkOut: iso(checkOut),
+    nights: n,
+    guests,
+    total: n * PRICE,
+    at: new Date().toISOString()
+  };
+
+  // 3. Envio: abre o WhatsApp com a mensagem já escrita
+  const hospedesTxt = `${guests} ${guests === 1 ? 'hóspede' : 'hóspedes'}`;
+  const noitesTxt = `${n} ${n === 1 ? 'noite' : 'noites'}`;
+  const mensagem =
+    `Pedido de reserva — Pinhal Cabin\n` +
+    `Nome: ${nome}\nE-mail: ${email}\nTelemóvel: ${telefone}\n` +
+    `Check-in: ${fmt(checkIn)}\nCheck-out: ${fmt(checkOut)}\n` +
+    `${noitesTxt} · ${hospedesTxt} · total €${payload.total}`;
+  window.open(`https://wa.me/${OWNER_WHATSAPP}?text=${encodeURIComponent(mensagem)}`, '_blank');
+
+  // 4. Só depois mostra a confirmação
+  document.getElementById('bookFlow').hidden = true;
+  document.getElementById('bookSuccess').hidden = false;
+  document.getElementById('successCopy').textContent =
+    `Check-in ${fmt(checkIn)} · Check-out ${fmt(checkOut)} · ${noitesTxt} · ${hospedesTxt} · total €${payload.total}. ` +
+    `Abrimos o WhatsApp com o seu pedido: envie a mensagem para concluir a reserva.`;
+});
 
   document.getElementById('bookAgain').addEventListener('click', () => {
     document.getElementById('bookSuccess').hidden = true;
